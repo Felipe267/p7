@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculadora</title>
+</head>
+<body>
+    <!-- calculadora -->
+    <input type="number" placeholder="digite um numero" id="t1">
+    <select id="operacao">
+        <option value="adicao">+</option>
+        <option value="subtracao">-</option>
+        <option value="multiplicacao">*</option>
+        <option value="divisao">/</option>
+    </select>
+    <input type="number" placeholder="digite um numero" id="t2">
+    <button onclick="Calcular()">Calcular</button>
+    <br>
+    <p id="resultado"></p>
+
+    <script>
+        function Calcular() {
+            var n1 = parseFloat(document.getElementById("t1").value);
+            var n2 = parseFloat(document.getElementById("t2").value);
+            var operacao = document.getElementById("operacao").value;
+
+            if (operacao === "adicao") {
+                resultado = n1 + n2;
+            } else if (operacao === "subtracao") {
+                resultado = n1 - n2;
+            } else if (operacao === "multiplicacao") {
+                resultado = n1 * n2;
+            } else if (operacao === "divisao") {
+                resultado = n1 / n2;
+            }
+
+            document.getElementById("resultado").innerHTML = resultado;
+        }
+    </script>
+</body>
+</html>
+
